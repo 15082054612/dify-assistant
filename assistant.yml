@@ -1,0 +1,1349 @@
+app:
+  description: '助手
+
+    '
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: 助手
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.23@6ee34ab1d9c1b74c2c412dc526f29a1bc06af09ae40f7c6feef4f54d4170de44
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gaode:0.0.9@ccaa8a28041970f385ff066ff84650ff7514907390bee317a268169eaaf7c386
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:1.0.5@51583313a5988d5dca405063831ffeeacdc1f2e95f32a8c10b4c281ceef39ebb
+    version: null
+kind: app
+version: 0.7.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        knowledge_file_size_limit: 15
+        single_chunk_attachment_limit: 10
+        skill_file_size_limit: 50
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1782980872217-source-answer-target
+      selected: false
+      source: '1782980872217'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: llm
+      id: 1782978441006-source-1782980872217-target
+      selected: false
+      source: '1782978441006'
+      sourceHandle: source
+      target: '1782980872217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1782976662714-source-1782980872217-target
+      selected: false
+      source: '1782976662714'
+      sourceHandle: source
+      target: '1782980872217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1783042227740-source-1783042897181-target
+      selected: false
+      source: '1783042227740'
+      sourceHandle: source
+      target: '1783042897181'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1783042897181-source-1782980872217-target
+      selected: false
+      source: '1783042897181'
+      sourceHandle: source
+      target: '1782980872217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1783048128584-source-1783048825324-target
+      selected: false
+      source: '1783048128584'
+      sourceHandle: source
+      target: '1783048825324'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783048825324-source-1783048966002-target
+      selected: false
+      source: '1783048825324'
+      sourceHandle: source
+      target: '1783048966002'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783042897181-source-1783048966002-target
+      selected: false
+      source: '1783042897181'
+      sourceHandle: source
+      target: '1783048966002'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1783048966002-source-1783049196712-target
+      selected: false
+      source: '1783048966002'
+      sourceHandle: source
+      target: '1783049196712'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1783049196712-source-1782980872217-target
+      selected: false
+      source: '1783049196712'
+      sourceHandle: source
+      target: '1782980872217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783050479209-source-1783042227740-target
+      selected: false
+      source: '1783050479209'
+      sourceHandle: source
+      target: '1783042227740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1782784755669-source-1783059307521-target
+      selected: false
+      source: '1782784755669'
+      sourceHandle: source
+      target: '1783059307521'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1783059307521-source-1783060941860-target
+      selected: false
+      source: '1783059307521'
+      sourceHandle: source
+      target: '1783060941860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1783060941860-true-1782976662714-target
+      selected: false
+      source: '1783060941860'
+      sourceHandle: 'true'
+      target: '1782976662714'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1783060941860-false-1783039358022-target
+      selected: false
+      source: '1783060941860'
+      sourceHandle: 'false'
+      target: '1783039358022'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1782784755669-source-1783066922308-target
+      selected: false
+      source: '1782784755669'
+      sourceHandle: source
+      target: '1783066922308'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783066922308-source-1783048966002-target
+      selected: false
+      source: '1783066922308'
+      sourceHandle: source
+      target: '1783048966002'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1783039358022-source-1783300810647-target
+      selected: false
+      source: '1783039358022'
+      sourceHandle: source
+      target: '1783300810647'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1783300810647-source-1782978441006-target
+      selected: false
+      source: '1783300810647'
+      sourceHandle: source
+      target: '1782978441006'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783300810647-source-1783048128584-target
+      selected: false
+      source: '1783300810647'
+      sourceHandle: source
+      target: '1783048128584'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1783300810647-source-1783050479209-target
+      selected: false
+      source: '1783300810647'
+      sourceHandle: source
+      target: '1783050479209'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1783300810647-source-1783042227740-target
+      selected: false
+      source: '1783300810647'
+      sourceHandle: source
+      target: '1783042227740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables:
+        - default: ''
+          hint: ''
+          label: user_image
+          max_length: 256
+          options: []
+          placeholder: ''
+          required: false
+          type: text-input
+          variable: user_image
+      height: 109
+      id: '1782784755669'
+      position:
+        x: -3917.5874875807285
+        y: 664.7329873635034
+      positionAbsolute:
+        x: -3917.5874875807285
+        y: 664.7329873635034
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1782980872217.text#}}'
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 102
+      id: answer
+      position:
+        x: 2294.201200452612
+        y: 414.51965633418934
+      positionAbsolute:
+        x: 2294.201200452612
+        y: 414.51965633418934
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - JplzDhHlVuIO20PI0/IWlyTbin7noSja/EgEpV71ZMtafBUGibSe3eqxR2NkY2i0
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: text-embedding-3-large
+              embedding_provider_name: langgenius/openai/openai
+              vector_weight: 0.7
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - sys
+        - query
+        retrieval_mode: multiple
+        selected: false
+        title: 运动营养与补剂科学指南
+        type: knowledge-retrieval
+      height: 90
+      id: '1782976662714'
+      position:
+        x: -934.091112087822
+        y: -148.846417559878
+      positionAbsolute:
+        x: -934.091112087822
+        y: -148.846417559878
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Target city for weather forecast query.
+            ja_JP: Target city for weather forecast query.
+            pt_BR: Cidade de destino para consulta de previsão do tempo.
+            zh_Hans: 天气预报查询的目标城市。
+          label:
+            en_US: city
+            ja_JP: city
+            pt_BR: cidade
+            zh_Hans: 城市
+          llm_description: If you don't know you can extract the city name from the
+            question or you can reply：Please tell me your city. You have to extract
+            the Chinese city name from the question.
+          max: null
+          min: null
+          name: city
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          city: ''
+        plugin_id: langgenius/gaode
+        plugin_unique_identifier: langgenius/gaode:0.0.8@1eaef00e7f6a82ccf644060eab6c8791c64792478300f1ec0e87d81a654df5f8
+        provider_icon: https://cloud.dify.ai/console/api/workspaces/current/plugin/icon?tenant_id=083841d7-69c0-4323-aebf-2c05d6c35ac1&filename=dc6ddb407b2fa5d615a5a4c2aeb720d1c17f3926d1657807dfb8747731fdb422.svg
+        provider_id: langgenius/gaode/gaode
+        provider_name: langgenius/gaode/gaode
+        provider_type: builtin
+        selected: false
+        title: 天气预报
+        tool_configurations: {}
+        tool_description: 天气预报查询。
+        tool_label: 天气预报
+        tool_name: gaode_weather
+        tool_node_version: '2'
+        tool_parameters:
+          city:
+            type: mixed
+            value: '{{#1783300810647.city#}}'
+        type: tool
+      height: 52
+      id: '1782978441006'
+      position:
+        x: -1021.0951993884111
+        y: 60.262025699485974
+      positionAbsolute:
+        x: -1021.0951993884111
+        y: 60.262025699485974
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-v4-flash
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 69b62f1a-c0ca-4b54-8ce2-721ef550d881
+          role: system
+          text: '你是一位运动健康专家。请你根据“用户提问”的内容，有针对性地回答问题，而不是罗列所有信息。
+
+
+            【用户提问】{{{#sys.query#}}}}
+
+
+            【系统提供的数据】
+
+            1. 当前天气：{{#1782978441006.text#}}
+
+            2. 推荐运动地点：{{#1783042897181.venue_recommendation#}}
+
+            3. 知识库资料（关于补剂/训练方法{{#context#}}
+
+            4.🔗 高德导航直达链接：{{#1783049196712.route_url#}}
+
+            【上下文回答规则】
+
+            - 如果用户的问题是指代性追问（如“给我链接”“发路线”“它在哪”等），必须直接使用上文中已经提到的场地、起点、路线信息回复
+
+            - 禁止在用户没有提新地点的情况下，重新生成默认地点的结果
+
+            - 如果系统数据里已经有导航链接，直接完整输出，绝对不能说“无法生成链接”
+
+            【回答策略】
+
+            - 如果用户只问“天气”，请只输出“今天和明天的天气”，不需要长篇大论讲知识库。
+
+            - 如果用户问“运动受伤/补剂”，请优先调用“知识库资料”给出专业建议，不要强行输出天气。
+
+            - 如果是综合性问题，则结合天气和知识库给出完整方案。
+
+            - 如果用户问某个具体问题，请直接针对该问题作答，不要输出其他内容只回答该问题。
+
+
+            【综合回复要求】
+
+            回答必须严谨、科学。回复结构不要局限于“今日运动建议”这种固定模版，根据用户问题动态调整回答风格和字数。引用知识库时需给出具体数值（如补剂克数、时长）。'
+        selected: false
+        title: LLM
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1782980872217'
+      position:
+        x: 1415.2351564909893
+        y: 494.52929434437993
+      positionAbsolute:
+        x: 1415.2351564909893
+        y: 494.52929434437993
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_config:
+          jinja2_variables: []
+        prompt_template:
+        - edition_type: basic
+          id: 3826165a-41c1-49ec-9fa2-26a9ae1057b7
+          role: system
+          text: '你的任务：从用户提问中提取两个信息：所在地级市、起点详细地点。
+
+            严格按JSON格式输出，只输出JSON，不要任何解释、多余文字。
+
+            格式示例：{"city": "宜宾", "start_address": "宜宾西站"}
+
+
+            规则：
+
+            1. city只输出地级市名称，不要带区县、街道、站点名
+
+            2. start_address保留用户原文的完整地点名
+
+            3. 如果用户没提具体起点，start_address默认等于城市名
+
+            4. 完全没提城市，默认city为"宜宾"'
+        - id: 98ba699d-4c8b-40dd-b27d-0bd7a116b38d
+          role: user
+          text: ''
+        selected: false
+        title: 地理位置提取
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1783039358022'
+      position:
+        x: -2297.19444554653
+        y: 776.820612422367
+      positionAbsolute:
+        x: -2297.19444554653
+        y: 776.820612422367
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: 'key:24990060f781dafd831ba283db5c4368
+
+          keywords:{{#1783050479209.search_keywords#}}
+
+          city:{{#1783300810647.city#}}
+
+          citylimit:true
+
+          output:JSON
+
+          offset:1
+
+          sort:distance'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 运动地点搜索
+        type: http-request
+        url: https://restapi.amap.com/v3/place/text
+        variables: []
+      height: 138
+      id: '1783042227740'
+      position:
+        x: -605.248701833503
+        y: 623.8820541320573
+      positionAbsolute:
+        x: -605.248701833503
+        y: 623.8820541320573
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "import json\n\ndef main(arg1):\n    # 防御层：兼容列表/字典/JSON字符串输入\n    if\
+          \ isinstance(arg1, list):\n        arg1 = arg1[0] if len(arg1) > 0 else\
+          \ {}\n    \n    if isinstance(arg1, str):\n        try:\n            data\
+          \ = json.loads(arg1)\n        except:\n            return {\n          \
+          \      \"venue_recommendation\": f\"获取场馆数据失败：{arg1}\",\n               \
+          \ \"dest_location\": \"\",\n                \"dest_name\": \"\"\n      \
+          \      }\n    elif isinstance(arg1, dict):\n        data = arg1\n    else:\n\
+          \        return {\n            \"venue_recommendation\": \"数据格式不支持，无法解析场馆信息。\"\
+          ,\n            \"dest_location\": \"\",\n            \"dest_name\": \"\"\
+          \n        }\n\n    # 校验接口状态\n    if str(data.get('status', '0')) != '1':\n\
+          \        return {\n            \"venue_recommendation\": f\"查询失败，高德提示：{data.get('info',\
+          \ '未知错误')}\",\n            \"dest_location\": \"\",\n            \"dest_name\"\
+          : \"\"\n        }\n\n    pois = data.get('pois', [])\n    if not pois:\n\
+          \        return {\n            \"venue_recommendation\": \"抱歉，当前区域暂未搜索到合适的运动场馆。\"\
+          ,\n            \"dest_location\": \"\",\n            \"dest_name\": \"\"\
+          \n        }\n\n    # 格式化场馆列表文本\n    result_text = \"\U0001F3CB️ 为您推荐附近优质运动场地：\\\
+          n\"\n    for i, p in enumerate(pois[:3]):\n        name = p.get('name',\
+          \ '未知场馆')\n        address = p.get('address', '未知地址')\n        distance\
+          \ = p.get('distance', '')\n        dist_str = f\"（距离约{distance}米）\" if distance\
+          \ else \"\"\n        result_text += f\"\\n{i+1}. {name}{dist_str}\\n   地址：{address}\\\
+          n\"\n\n    # 提取第一个场馆的经纬度和名称（作为路径规划终点）\n    first_poi = pois[0]\n    dest_location\
+          \ = first_poi.get('location', '')  # 格式：经度,纬度\n    dest_name = first_poi.get('name',\
+          \ '未知场馆')\n\n    return {\n        \"venue_recommendation\": result_text,\n\
+          \        \"dest_location\": dest_location,\n        \"dest_name\": dest_name\n\
+          \    }"
+        code_language: python3
+        outputs:
+          dest_location:
+            children: null
+            type: string
+          dest_name:
+            children: null
+            type: string
+          venue_recommendation:
+            children: null
+            type: string
+        selected: false
+        title: 获取运动场地
+        type: code
+        variables:
+        - value_selector:
+          - '1783042227740'
+          - body
+          value_type: string
+          variable: arg1
+      height: 52
+      id: '1783042897181'
+      position:
+        x: 142.3939098208551
+        y: 603.7897001018939
+      positionAbsolute:
+        x: 142.3939098208551
+        y: 603.7897001018939
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: 'key:24990060f781dafd831ba283db5c4368
+
+          keywords:{{#1783300810647.start_address#}}
+
+          city:{{#1783300810647.city#}}
+
+          output:JSON
+
+          offset:1
+
+          citylimit:true
+
+          extensions:base'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 起点地址转经纬度
+        type: http-request
+        url: https://restapi.amap.com/v3/place/text
+        variables: []
+      height: 138
+      id: '1783048128584'
+      position:
+        x: -996.4797395310885
+        y: 220.08642492263908
+      positionAbsolute:
+        x: -996.4797395310885
+        y: 220.08642492263908
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "import json\n\ndef main(poi_data):\n    # 兜底默认值：宜宾市中心，极端情况也能正常运行\n\
+          \    default_addr = \"宜宾市\"\n    default_loc = \"104.6455,28.7616\"\n  \
+          \  \n    # 兼容字符串/字典两种输入格式\n    if isinstance(poi_data, str):\n        try:\n\
+          \            data = json.loads(poi_data)\n        except:\n            return\
+          \ {\"start_address\": default_addr, \"start_location\": default_loc, \"\
+          parse_status\": \"fail\"}\n    else:\n        data = poi_data\n    \n  \
+          \  # 校验接口返回状态\n    if str(data.get(\"status\", \"0\")) != \"1\":\n     \
+          \   return {\"start_address\": default_addr, \"start_location\": default_loc,\
+          \ \"parse_status\": \"fail\"}\n    \n    pois = data.get(\"pois\", [])\n\
+          \    if not pois:\n        return {\"start_address\": default_addr, \"start_location\"\
+          : default_loc, \"parse_status\": \"fail\"}\n    \n    # 取第一条匹配度最高的结果\n \
+          \   best = pois[0]\n    addr = best.get(\"name\", default_addr)\n    loc\
+          \ = best.get(\"location\", default_loc)\n    \n    return {\n        \"\
+          start_address\": addr,\n        \"start_location\": loc,\n        \"parse_status\"\
+          : \"success\"\n    }"
+        code_language: python3
+        outputs:
+          parse_status:
+            children: null
+            type: string
+          start_address:
+            children: null
+            type: string
+          start_location:
+            children: null
+            type: string
+        selected: false
+        title: 地址转化
+        type: code
+        variables:
+        - value_selector:
+          - '1783048128584'
+          - body
+          value_type: string
+          variable: poi_data
+      height: 52
+      id: '1783048825324'
+      position:
+        x: -504.2648438023435
+        y: 440.76928812100186
+      positionAbsolute:
+        x: -504.2648438023435
+        y: 440.76928812100186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: 'key:24990060f781dafd831ba283db5c4368
+
+          origin:{{#1783048825324.start_location#}}
+
+          destination:{{#1783042897181.dest_location#}}
+
+          output:JSON
+
+          extensions:base'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 路径规划
+        type: http-request
+        url: https://restapi.amap.com/v3/direction/{{#1783066922308.mode_api_path#}}
+        variables: []
+      height: 156
+      id: '1783048966002'
+      position:
+        x: -280.0350349570641
+        y: 1327.7420090115625
+      positionAbsolute:
+        x: -280.0350349570641
+        y: 1327.7420090115625
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "import json\n\ndef main(route_data, start_address=\"起点\", dest_name=\"\
+          终点\", \n         start_location=\"\", dest_location=\"\", travel_mode=\"\
+          car\"):\n    \n    # 双模式统一配置\n    mode_config = {\n        \"car\": {\n\
+          \            \"emoji\": \"\U0001F697\",\n            \"title\": \"驾车\",\n\
+          \            \"show_toll\": True,\n            \"show_traffic_light\": True,\n\
+          \            \"nav_mode\": \"car\",\n            \"tip_text\": \"出发前请检查车况，全程系好安全带，遵守交通规则。\"\
+          \n        },\n        \"run\": {\n            \"emoji\": \"\U0001F3C3\"\
+          ,\n            \"title\": \"跑步\",\n            \"show_toll\": False,\n \
+          \           \"show_traffic_light\": False,\n            \"nav_mode\": \"\
+          walk\",\n            \"tip_text\": \"出发前做好5-10分钟动态热身，沿途避让行人，长距离建议携带补水。\"\
+          \n        }\n    }\n    config = mode_config.get(travel_mode, mode_config[\"\
+          car\"])\n    mode_name = config[\"title\"]\n\n    # 防御层1：列表格式处理\n    if\
+          \ isinstance(route_data, list):\n        if len(route_data) > 0:\n     \
+          \       route_data = route_data[0]\n        else:\n            return {\n\
+          \                \"route_text\": f\"❌ 未获取到{mode_name}路径规划数据\",\n       \
+          \         \"total_distance_km\": 0,\n                \"total_duration_min\"\
+          : 0,\n                \"toll_fee\": 0,\n                \"parse_status\"\
+          : \"fail\",\n                \"route_url\": \"\"\n            }\n\n    #\
+          \ 防御层2：兼容JSON字符串/字典\n    if isinstance(route_data, str):\n        try:\n\
+          \            data = json.loads(route_data)\n        except json.JSONDecodeError:\n\
+          \            return {\n                \"route_text\": f\"❌ 路径数据解析失败：{route_data}\"\
+          ,\n                \"total_distance_km\": 0,\n                \"total_duration_min\"\
+          : 0,\n                \"toll_fee\": 0,\n                \"parse_status\"\
+          : \"fail\",\n                \"route_url\": \"\"\n            }\n    elif\
+          \ isinstance(route_data, dict):\n        data = route_data\n    else:\n\
+          \        return {\n            \"route_text\": f\"❌ 不支持的数据类型：{type(route_data).__name__}\"\
+          ,\n            \"total_distance_km\": 0,\n            \"total_duration_min\"\
+          : 0,\n            \"toll_fee\": 0,\n            \"parse_status\": \"fail\"\
+          ,\n            \"route_url\": \"\"\n        }\n\n    # 校验接口返回状态\n    if\
+          \ str(data.get('status', '0')) != '1':\n        error_info = data.get('info',\
+          \ '未知错误')\n        return {\n            \"route_text\": f\"❌ {mode_name}路径规划失败：{error_info}\"\
+          ,\n            \"total_distance_km\": 0,\n            \"total_duration_min\"\
+          : 0,\n            \"toll_fee\": 0,\n            \"parse_status\": \"fail\"\
+          ,\n            \"route_url\": \"\"\n        }\n\n    # 提取路径基础数据\n    route\
+          \ = data.get('route', {})\n    paths = route.get('paths', [])\n    if not\
+          \ paths:\n        return {\n            \"route_text\": f\"❌ 未规划出可行的{mode_name}路线\"\
+          ,\n            \"total_distance_km\": 0,\n            \"total_duration_min\"\
+          : 0,\n            \"toll_fee\": 0,\n            \"parse_status\": \"fail\"\
+          ,\n            \"route_url\": \"\"\n        }\n\n    best_path = paths[0]\n\
+          \    total_distance_m = int(best_path.get('distance', 0))\n    api_duration_s\
+          \ = int(best_path.get('duration', 0))\n    tolls = int(best_path.get('tolls',\
+          \ 0))\n    traffic_lights = int(best_path.get('traffic_lights', 0))\n\n\
+          \    total_distance_km = round(total_distance_m / 1000, 1)\n\n    # 分模式计算耗时\n\
+          \    if travel_mode == \"run\":\n        # 跑步按大众6分/公里配速估算\n        total_duration_min\
+          \ = int(total_distance_km * 6)\n        walk_duration_min = api_duration_s\
+          \ // 60\n    else:\n        total_duration_min = api_duration_s // 60\n\n\
+          \    # 格式化耗时文本\n    hours = total_duration_min // 60\n    minutes = total_duration_min\
+          \ % 60\n    duration_text = f\"{hours}小时{minutes}分钟\" if hours > 0 else\
+          \ f\"{minutes}分钟\"\n\n    # 格式化路线步骤\n    steps = best_path.get('steps',\
+          \ [])\n    steps_text = \"\"\n    for i, step in enumerate(steps[:8]):\n\
+          \        instruction = step.get('instruction', '').strip()\n        step_dist_m\
+          \ = int(step.get('distance', 0))\n        step_dist_km = round(step_dist_m\
+          \ / 1000, 1)\n        if instruction:\n            steps_text += f\"\\n{i+1}.\
+          \ {instruction}（约{step_dist_km}公里）\"\n\n    if len(steps) > 8:\n       \
+          \ steps_text += f\"\\n...（剩余{len(steps)-8}段路线，全程请以实际路况为准）\"\n\n    # 生成对应模式的高德导航链接\n\
+          \    route_url = \"\"\n    map_link_text = \"\"\n    if start_location and\
+          \ dest_location:\n        route_url = f\"https://uri.amap.com/navigation?from={start_location}&to={dest_location}&mode={config['nav_mode']}&policy=1&src=sport_assistant&coordinate=gaode&callnative=0\"\
+          \n        map_link_text = f\"\\n\U0001F5FA️ 查看完整地图导航：{route_url}\"\n\n \
+          \   # 动态组装附加信息\n    extra_lines = \"\"\n    if config[\"show_toll\"] and\
+          \ tolls > 0:\n        extra_lines += f\"\\n\U0001F4B0 高速费：{tolls} 元\"\n\
+          \    if config[\"show_traffic_light\"]:\n        extra_lines += f\"\\n\U0001F6A6\
+          \ 红绿灯：约{traffic_lights}个\"\n    \n    if travel_mode == \"run\":\n     \
+          \   extra_lines += f\"\\n\U0001F6B6 步行参考耗时：{walk_duration_min} 分钟\"\n\n\
+          \    # 组装最终文本\n    route_text = f\"\"\"{config['emoji']} {mode_name}前往【{dest_name}】路线规划\n\
+          \U0001F4CD 起点：{start_address}\n\U0001F3C1 终点：{dest_name}\n\U0001F4CF 总距离：{total_distance_km}\
+          \ 公里\n⏱️ 预计耗时：{duration_text}{extra_lines}\n\n\U0001F9ED 路线指引：{steps_text}\n\
+          {map_link_text}\n\n\U0001F4A1 温馨提示：{config['tip_text']}\"\"\"\n\n    return\
+          \ {\n        \"route_text\": route_text,\n        \"total_distance_km\"\
+          : total_distance_km,\n        \"total_duration_min\": total_duration_min,\n\
+          \        \"toll_fee\": tolls if travel_mode == \"car\" else 0,\n       \
+          \ \"parse_status\": \"success\",\n        \"route_url\": route_url\n   \
+          \ }"
+        code_language: python3
+        outputs:
+          parse_status:
+            children: null
+            type: string
+          route_text:
+            children: null
+            type: string
+          route_url:
+            children: null
+            type: string
+          toll_fee:
+            children: null
+            type: number
+          total_distance_km:
+            children: null
+            type: number
+          total_duration_min:
+            children: null
+            type: number
+        selected: false
+        title: 路径结果格式化
+        type: code
+        variables:
+        - value_selector:
+          - '1783048966002'
+          - body
+          value_type: string
+          variable: route_data
+        - value_selector:
+          - '1783048825324'
+          - start_address
+          value_type: string
+          variable: start_address
+        - value_selector:
+          - '1783042897181'
+          - dest_name
+          value_type: string
+          variable: dest_name
+        - value_selector:
+          - '1783048825324'
+          - start_location
+          value_type: string
+          variable: start_location
+        - value_selector:
+          - '1783042897181'
+          - dest_location
+          value_type: string
+          variable: dest_location
+        - value_selector:
+          - '1783066922308'
+          - travel_mode
+          value_type: string
+          variable: travel_mode
+      height: 52
+      id: '1783049196712'
+      position:
+        x: 1092.3721992590804
+        y: 1284.4406811337435
+      positionAbsolute:
+        x: 1092.3721992590804
+        y: 1284.4406811337435
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(user_query: str) -> dict:\n    # ===== 防御层：异常输入处理 =====\n\
+          \    if not isinstance(user_query, str):\n        user_query = str(user_query)\
+          \ if user_query else \"\"\n    user_query = user_query.strip().lower()\n\
+          \n    # ===== 第一层：口语别名 → 标准运动类型 映射表 =====\n    # 所有口语化、俚语、简称都在这里扩展，自动映射到标准运动分类\n\
+          \    alias_map = {\n        # 健身类口语\n        \"撸铁\": \"健身\", \"练肌肉\": \"\
+          健身\", \"增肌\": \"健身\", \"减脂\": \"健身\",\n        \"健身房\": \"健身\", \"练力量\"\
+          : \"健身\", \"力量训练\": \"健身\", \"塑型\": \"健身\",\n        \"练肩\": \"健身\", \"\
+          练腿\": \"健身\", \"器械训练\": \"健身\",\n\n        # 篮球类口语\n        \"打篮球\": \"\
+          篮球\", \"打球\": \"篮球\", \"打个球\": \"篮球\", \"篮球局\": \"篮球\",\n        \"半场篮球\"\
+          : \"篮球\", \"投篮球\": \"篮球\", \"野球\": \"篮球\",\n\n        # 乒乓球类口语\n       \
+          \ \"乒乓球\": \"乒乓球\", \"乒乓\": \"乒乓球\", \"打乒乓\": \"乒乓球\", \"打乒乓球\": \"乒乓球\"\
+          ,\n        \"乒羽\": \"乒乓球\", \"乒乓球台\": \"乒乓球\",\n\n        # 羽毛球类口语\n   \
+          \     \"羽毛球\": \"羽毛球\", \"打羽毛球\": \"羽毛球\", \"羽球\": \"羽毛球\", \"打羽球\": \"\
+          羽毛球\",\n\n        # 游泳类口语\n        \"游泳\": \"游泳\", \"游个泳\": \"游泳\", \"游泳馆\"\
+          : \"游泳\", \"泳池\": \"游泳\",\n        \"玩水\": \"游泳\", \"泡水\": \"游泳\", \"水上运动\"\
+          : \"游泳\",\n\n        # 跑步类口语\n        \"跑步\": \"跑步\", \"夜跑\": \"跑步\", \"\
+          晨跑\": \"跑步\", \"慢跑\": \"跑步\",\n        \"跑两步\": \"跑步\", \"田径\": \"跑步\",\
+          \ \"跑道\": \"跑步\", \"有氧跑\": \"跑步\",\n\n        # 足球类口语\n        \"足球\": \"\
+          足球\", \"踢球\": \"足球\", \"踢足球\": \"足球\", \"足球局\": \"足球\",\n\n        # 网球类口语\n\
+          \        \"网球\": \"网球\", \"打网球\": \"网球\", \"网球局\": \"网球\",\n\n        #\
+          \ 瑜伽/静态类口语\n        \"瑜伽\": \"瑜伽\", \"练瑜伽\": \"瑜伽\", \"普拉提\": \"瑜伽\", \"\
+          拉伸\": \"瑜伽\",\n\n        # 台球类口语\n        \"台球\": \"台球\", \"桌球\": \"台球\"\
+          , \"打台球\": \"台球\", \"打桌球\": \"台球\",\n        \"斯诺克\": \"台球\", \"黑八\": \"\
+          台球\",\n\n        # 搏击类口语\n        \"搏击\": \"搏击\", \"拳击\": \"搏击\", \"散打\"\
+          : \"搏击\", \"打拳\": \"搏击\",\n        \"泰拳\": \"搏击\", \"格斗\": \"搏击\",\n\n \
+          \       # 骑行类口语\n        \"骑行\": \"骑行\", \"骑车\": \"骑行\", \"骑自行车\": \"骑行\"\
+          , \"单车\": \"骑行\",\n        \"公路车\": \"骑行\", \"山地车\": \"骑行\",\n\n       \
+          \ # 排球类口语\n        \"排球\": \"排球\", \"打排球\": \"排球\", \"气排球\": \"排球\"\n  \
+          \  }\n\n    # ===== 第二层：标准运动类型 → 高德POI搜索关键词 映射 =====\n    sport_keyword_map\
+          \ = {\n        \"健身\": [\"健身房\", \"健身俱乐部\", \"健身中心\"],\n        \"篮球\":\
+          \ [\"篮球场\", \"篮球馆\", \"篮球公园\"],\n        \"乒乓球\": [\"乒乓球馆\", \"乒乓球场\", \"\
+          乒乓球室\"],\n        \"羽毛球\": [\"羽毛球馆\", \"羽毛球场\"],\n        \"游泳\": [\"游泳馆\"\
+          , \"游泳池\", \"水上运动中心\"],\n        \"跑步\": [\"公园跑道\", \"体育场\", \"田径场\", \"\
+          绿道\"],\n        \"足球\": [\"足球场\", \"足球公园\", \"五人制足球场\"],\n        \"网球\"\
+          : [\"网球场\", \"网球馆\"],\n        \"瑜伽\": [\"瑜伽馆\", \"普拉提工作室\"],\n        \"\
+          台球\": [\"台球厅\", \"桌球室\", \"台球俱乐部\"],\n        \"搏击\": [\"搏击馆\", \"拳击馆\"\
+          , \"散打馆\"],\n        \"骑行\": [\"骑行绿道\", \"湿地公园\", \"郊野公园\"],\n        \"\
+          排球\": [\"排球场\", \"排球馆\"]\n    }\n\n    # ===== 匹配逻辑：先匹配口语别名，再映射到搜索关键词 =====\n\
+          \    matched_types = set()  # 用集合去重，支持多运动类型同时匹配\n\n    # 遍历所有口语别名，命中则加入匹配的标准类型\n\
+          \    for alias, sport_type in alias_map.items():\n        if alias in user_query:\n\
+          \            matched_types.add(sport_type)\n\n    # ===== 无匹配时的兜底逻辑 =====\n\
+          \    if not matched_types:\n        return {\n            \"search_keywords\"\
+          : \"运动场馆,健身中心,体育场馆\",\n            \"sport_type\": \"综合运动场馆\",\n       \
+          \     \"match_status\": \"default\"\n        }\n\n    # ===== 根据匹配到的标准类型，组装最终搜索关键词\
+          \ =====\n    matched_keywords = []\n    for sport_type in matched_types:\n\
+          \        if sport_type in sport_keyword_map:\n            matched_keywords.extend(sport_keyword_map[sport_type])\n\
+          \n    # 关键词去重，拼接为逗号分隔格式（高德API要求格式）\n    unique_keywords = list(set(matched_keywords))\n\
+          \    search_keywords = \",\".join(unique_keywords)\n    sport_type_text\
+          \ = \"、\".join(list(matched_types))\n\n    return {\n        \"search_keywords\"\
+          : search_keywords,\n        \"sport_type\": sport_type_text,\n        \"\
+          match_status\": \"success\"\n    }"
+        code_language: python3
+        outputs:
+          match_status:
+            children: null
+            type: string
+          search_keywords:
+            children: null
+            type: string
+          sport_type:
+            children: null
+            type: string
+        selected: false
+        title: 运动类型提取
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: user_query
+      height: 52
+      id: '1783050479209'
+      position:
+        x: -983.5513129642452
+        y: 970.8124935634476
+      positionAbsolute:
+        x: -983.5513129642452
+        y: 970.8124935634476
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(user_query: str) -> dict:\n    # 防御层：异常输入处理\n    if not isinstance(user_query,\
+          \ str):\n        user_query = str(user_query) if user_query else \"\"\n\
+          \    user_query = user_query.strip().lower()\n\n    if not user_query:\n\
+          \        return {\n            \"intent\": \"general\",\n            \"\
+          intent_name\": \"通用咨询\",\n            \"confidence\": 0.0\n        }\n\n\
+          \    # ===== 意图关键词库，可自由扩展 =====\n    intent_keywords = {\n        # 天气意图\n\
+          \        \"weather\": [\n            \"天气\", \"气温\", \"温度\", \"下雨\", \"\
+          晴天\", \"阴天\", \"刮风\", \"风力\", \"湿度\",\n            \"空气质量\", \"aqi\", \"\
+          雾霾\", \"降雨\", \"降雪\", \"今天天气\", \"明天天气\",\n            \"适合户外运动吗\", \"户外能不能运动\"\
+          , \"会不会下雨\", \"热不热\", \"冷不冷\"\n        ],\n        # 知识库意图（补剂、损伤、训练方法）\n\
+          \        \"knowledge\": [\n            \"补剂\", \"肌酸\", \"蛋白粉\", \"咖啡因\"\
+          , \"支链氨基酸\", \"鱼油\",\n            \"受伤\", \"拉伤\", \"扭伤\", \"抽筋\", \"中暑\"\
+          , \"低血糖\", \"肌肉酸痛\",\n            \"膝盖疼\", \"崴脚\", \"损伤\", \"急救\", \"处理方法\"\
+          ,\n            \"训练方法\", \"怎么练\", \"减脂\", \"增肌\", \"塑形\", \"热身\", \"拉伸\"\
+          ,\n            \"恢复\", \"饮食\", \"营养\", \"运动计划\", \"训练计划\", \"动作规范\"\n  \
+          \      ],\n        # 场地/路线意图\n        \"venue\": [\n            \"健身房\"\
+          , \"游泳馆\", \"公园\", \"跑道\", \"运动场地\", \"哪里运动\", \"附近\",\n            \"打球的地方\"\
+          , \"跑步地点\", \"健身地点\", \"场馆\", \"球场\", \"羽毛球馆\",\n            \"篮球场\", \"\
+          足球场\", \"在哪运动\", \"推荐场地\", \"运动的地方\",\n            \"怎么去\", \"路线\", \"导航\"\
+          , \"过去多久\", \"驾车路线\", \"怎么过去\"\n        ]\n    }\n\n    # 统计各意图关键词命中次数\n\
+          \    hit_count = {}\n    for intent, keywords in intent_keywords.items():\n\
+          \        count = 0\n        for kw in keywords:\n            if kw in user_query:\n\
+          \                count += 1\n        hit_count[intent] = count\n\n    max_count\
+          \ = max(hit_count.values())\n    # 无任何命中 → 通用兜底\n    if max_count == 0:\n\
+          \        return {\n            \"intent\": \"general\",\n            \"\
+          intent_name\": \"通用咨询\",\n            \"confidence\": 0.0\n        }\n\n\
+          \    # 多意图命中时的优先级：场地 > 天气 > 知识\n    priority = [\"venue\", \"weather\",\
+          \ \"knowledge\"]\n    final_intent = None\n    for intent in priority:\n\
+          \        if hit_count[intent] == max_count:\n            final_intent =\
+          \ intent\n            break\n\n    intent_name_map = {\n        \"weather\"\
+          : \"天气查询\",\n        \"knowledge\": \"运动知识咨询\",\n        \"venue\": \"运动场地/路线查询\"\
+          ,\n        \"general\": \"通用咨询\"\n    }\n\n    confidence = min(max_count\
+          \ / 3, 1.0)\n\n    return {\n        \"intent\": final_intent,\n       \
+          \ \"intent_name\": intent_name_map[final_intent],\n        \"confidence\"\
+          : confidence\n    }\n"
+        code_language: python3
+        outputs:
+          confidence:
+            children: null
+            type: number
+          intent:
+            children: null
+            type: string
+          intent_name:
+            children: null
+            type: string
+        selected: false
+        title: 意图识别
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: user_query
+      height: 52
+      id: '1783059307521'
+      position:
+        x: -3265.351202333578
+        y: 228.43073150569927
+      positionAbsolute:
+        x: -3265.351202333578
+        y: 228.43073150569927
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 018739dc-5187-479a-93ab-f2829eea0bdc
+            value: venue
+            varType: string
+            variable_selector:
+            - '1783059307521'
+            - intent
+          - comparison_operator: contains
+            id: 16de29a6-c291-4f63-a86e-9cabb03cdde7
+            value: weather
+            varType: string
+            variable_selector:
+            - '1783059307521'
+            - intent
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 174
+      id: '1783060941860'
+      position:
+        x: -2652.1165268639566
+        y: 153.83059994391584
+      positionAbsolute:
+        x: -2652.1165268639566
+        y: 153.83059994391584
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(user_query: str) -> dict:\n    # 防御层：异常输入处理\n    if not isinstance(user_query,\
+          \ str):\n        user_query = str(user_query) if user_query else \"\"\n\
+          \    user_query = user_query.strip().lower()\n\n    # 出行方式匹配规则\n    mode_rules\
+          \ = [\n        {\n            \"mode\": \"run\",\n            \"name\":\
+          \ \"跑步\",\n            \"api_path\": \"walking\",\n            \"keywords\"\
+          : [\"跑步\", \"跑过去\", \"慢跑\", \"跑步去\", \"跑着去\", \"跑过去\", \"跑步前往\"]\n     \
+          \   },\n        {\n            \"mode\": \"car\",\n            \"name\"\
+          : \"驾车\",\n            \"api_path\": \"driving\",\n            \"keywords\"\
+          : [\"开车\", \"驾车\", \"自驾\", \"开车去\", \"打车\", \"自驾去\", \"小轿车\", \"驾车前往\"]\n\
+          \        }\n    ]\n\n    # 匹配优先级：跑步 > 驾车\n    for rule in mode_rules:\n\
+          \        for kw in rule[\"keywords\"]:\n            if kw in user_query:\n\
+          \                return {\n                    \"travel_mode\": rule[\"\
+          mode\"],\n                    \"mode_name\": rule[\"name\"],\n         \
+          \           \"mode_api_path\": rule[\"api_path\"]\n                }\n\n\
+          \    # 无匹配默认驾车\n    return {\n        \"travel_mode\": \"car\",\n      \
+          \  \"mode_name\": \"驾车\",\n        \"mode_api_path\": \"driving\"\n    }"
+        code_language: python3
+        outputs:
+          mode_api_path:
+            children: null
+            type: string
+          mode_name:
+            children: null
+            type: string
+          travel_mode:
+            children: null
+            type: string
+        selected: false
+        title: 出行方式识别
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: user_query
+      height: 52
+      id: '1783066922308'
+      position:
+        x: -1836.0374401323309
+        y: 1231.51822703273
+      positionAbsolute:
+        x: -1836.0374401323309
+        y: 1231.51822703273
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "import json\n\ndef main(geo_text: str):\n    default_city = \"宜宾\"\n\
+          \    default_address = \"宜宾市\"\n    try:\n        data = json.loads(geo_text.strip())\n\
+          \        city = data.get(\"city\", default_city).strip()\n        start_address\
+          \ = data.get(\"start_address\", default_address).strip()\n        if not\
+          \ city:\n            city = default_city\n        if not start_address:\n\
+          \            start_address = city\n        return {\"city\": city, \"start_address\"\
+          : start_address}\n    except:\n        # 解析失败兜底，保证链路不中断\n        return\
+          \ {\n            \"city\": default_city,\n            \"start_address\"\
+          : geo_text.strip() if geo_text else default_address\n        }"
+        code_language: python3
+        outputs:
+          city:
+            children: null
+            type: string
+          start_address:
+            children: null
+            type: string
+        selected: false
+        title: 地理信息解析
+        type: code
+        variables:
+        - value_selector:
+          - '1783039358022'
+          - text
+          value_type: string
+          variable: geo_text
+      height: 52
+      id: '1783300810647'
+      position:
+        x: -1753.1382031017226
+        y: 603.7897001018939
+      positionAbsolute:
+        x: -1753.1382031017226
+        y: 603.7897001018939
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    viewport:
+      x: 1161.1868602282625
+      y: 319.01588198666036
+      zoom: 0.41622249025095076
+  rag_pipeline_variables: []
