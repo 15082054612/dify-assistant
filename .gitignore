@@ -1,0 +1,22 @@
+# ===== 操作系统 / 编辑器噪声 =====
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ===== 敏感信息 =====
+# 切勿把 Dify 的 API Key / 密钥提交进仓库。
+# 如果你把工作流里的密钥抽到独立文件，请让它们保持被忽略状态。
+.env
+.env.*
+*.env
+secrets.yml
+*.secret
+*.key
+
+# ===== 导出备份与临时文件 =====
+*.bak
+*.tmp
+*.log
+*~
